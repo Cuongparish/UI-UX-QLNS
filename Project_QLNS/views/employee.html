@@ -30,7 +30,7 @@
 
         .logo a{
             position: absolute;
-            font-size: 100px;
+            font-size: 80px;
             color: black;
             text-decoration: none; 
             
@@ -82,7 +82,7 @@
 
 
         #container #main{
-            margin-top: 30px;
+            margin-top: 0px;
             width: 1300px;
             padding-left: 100px;
             padding-right: -100px;
@@ -93,6 +93,7 @@
             margin-bottom: 5px;
             text-align: center;
             color: black;
+          
         }
 
         #container #main #infor {
@@ -122,6 +123,12 @@
 
 
 
+        h2{
+          /* position: absolute; */
+          font-size: 46px;
+          text-align: center;
+          font-weight: bold;
+        }
 
         #search input{
             overflow: hidden;
@@ -137,7 +144,7 @@
 </head>
 <body>
     <div class="logo">
-        <img src="../Images/logo.png" alt="">
+        <img src="../Images/logo1.png" alt="">
         <a href="">LIBIB</a>
     </div>
 
@@ -147,47 +154,43 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto nav nav-tabs">
             <li class="nav-item ">
-              <a class="nav-link text-dark" href="./searchbook.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-dark" href="./searchbook.html">Trang chủ </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark active" href="#">Nhân viên</a>
+              <a class="nav-link text-dark active" href="#">Nhân viên <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-dark" href="">Doanh thu</a>
+                <a class="nav-link text-dark" href="./turnover.html">Doanh thu</a>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
-                <div class="dropdown-menu" style="font-size: 20px;">
-                    <a  class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thêm</a>
-                    <div class="dropdown-menu" style="font-size: 20px;">
-                        <a class="dropdown-item" href="#">Nhập thêm sách</a>
-                        <a class="dropdown-item" href="#">Nhập sách mới</a>
-                    </div>
-                    <a class="dropdown-item" href="#">Xóa</a>
-                    <a class="dropdown-item" href="#">Sửa</a>
-                </div>
+              <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
+              <div class="dropdown-menu" style="font-size: 20px;">
+                  <a  class="dropdown-item " href="./import_newbook.html" >Thêm mới</a>
+                  <a class="dropdown-item" href="./import_oldbook.html">Thêm vào kho</a>
+                  <a class="dropdown-item" href="./editinfor.html">Sửa</a>
+              </div>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Tồn kho</a>
+              <a class="nav-link text-dark" href="inventory.html">Tồn kho</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Công nợ</a>
+                <a class="nav-link text-dark" href="debt.html">Công nợ</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Chính sách</a>
+              <a class="nav-link text-dark" href="rule.html">Chính sách</a>
             </li>
           </ul>
 
 
 
           <a href=""><i class="glyphicon glyphicon-user"></i></a>
-          <a href="">
+          <a href="./profile.html">
             <span class="navbar-text">
               {{tên người dùng}}
               </span>
@@ -195,15 +198,17 @@
       </div>
     </nav>
 
+    <h2>DANH SÁCH NHÂN VIÊN </h2>
+
     <div id="search">
       <i class="material-icons">search</i>
-      <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-dark" type="submit">Find</button>
+      <input class="form-control " type="search" placeholder="Nhập thông tin cần tìm" aria-label="Search">
+      <button class="btn btn-outline-success my-0 my-sm-0" type="submit">Tìm</button>
     </div>
       
       <div id="container" >
         <div id="main">
-            <h2>DANH SÁCH NHÂN VIÊN </h2>
+            
             <hr id="hr2">  
             <div class="infor" id="infor">
                 <form action=""  class="form" id="form-1">

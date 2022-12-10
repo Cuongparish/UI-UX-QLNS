@@ -28,7 +28,7 @@
 
         .logo a{
             position: absolute;
-            font-size: 100px;
+            font-size: 80px;
             color: black;
             text-decoration: none; 
             
@@ -155,7 +155,7 @@
 </head>
 <body>
     <div class="logo">
-        <img src="../Images/logo.png" alt="">
+        <img src="../Images/logo1.png" alt="">
         <a href="">LIBIB</a>
     </div>
 
@@ -165,47 +165,43 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto nav nav-tabs">
             <li class="nav-item ">
-              <a class="nav-link text-dark" href="./searchbook.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-dark" href="./searchbook.html">Trang chủ <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Nhân viên</a>
+              <a class="nav-link text-dark" href="./employee.html">Nhân viên</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-dark" href="">Doanh thu</a>
+                <a class="nav-link text-dark" href="./turnover.html">Doanh thu</a>
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
-                <div class="dropdown-menu" style="font-size: 20px;">
-                    <a  class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thêm</a>
-                    <div class="dropdown-menu" style="font-size: 20px;">
-                        <a class="dropdown-item" href="#">Nhập thêm sách</a>
-                        <a class="dropdown-item" href="#">Nhập sách mới</a>
-                    </div>
-                    <a class="dropdown-item" href="#">Xóa</a>
-                    <a class="dropdown-item" href="#">Sửa</a>
-                </div>
+              <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
+              <div class="dropdown-menu" style="font-size: 20px;">
+                  <a  class="dropdown-item " href="./import_newbook.html" >Thêm mới</a>
+                  <a class="dropdown-item" href="./import_oldbook.html">Thêm vào kho</a>
+                  <a class="dropdown-item" href="./editinfor.html">Sửa</a>
+              </div>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Tồn kho</a>
+              <a class="nav-link text-dark" href="./inventory.html">Tồn kho</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Công nợ</a>
+                <a class="nav-link text-dark" href="./debt.html">Công nợ</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Chính sách</a>
+              <a class="nav-link text-dark" href="./rule.html">Chính sách</a>
             </li>
           </ul>
 
 
 
           <a href=""><i class="glyphicon glyphicon-user"></i></a>
-          <a href="">
+          <a href="./profile.html">
             <span class="navbar-text">
                 tên người dùng
               </span>

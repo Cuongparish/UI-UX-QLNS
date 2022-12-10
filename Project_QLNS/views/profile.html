@@ -31,7 +31,7 @@
 
         .logo a{
             position: absolute;
-            font-size: 100px;
+            font-size: 80px;
             color: black;
             text-decoration: none; 
             
@@ -124,7 +124,7 @@
 </head>
 <body>
     <div class="logo">
-        <img src="../Images/logo.png" alt="">
+        <img src="../Images/logo1.png" alt="">
         <a href="">LIBIB</a>
     </div>
 
@@ -133,7 +133,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link text-dark" href="./searchbook.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-dark" href="./searchbook.html">Trang chủ <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
@@ -147,13 +147,9 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
                 <div class="dropdown-menu" style="font-size: 20px;">
-                    <a  class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thêm</a>
-                    <div class="dropdown-menu" style="font-size: 20px;">
-                        <a class="dropdown-item" href="#">Nhập thêm sách</a>
-                        <a class="dropdown-item" href="#">Nhập sách mới</a>
-                    </div>
-                    <a class="dropdown-item" href="#">Xóa</a>
-                    <a class="dropdown-item" href="#">Sửa</a>
+                    <a  class="dropdown-item " href="./import_newbook.html" >Thêm mới</a>
+                    <a class="dropdown-item" href="./import_oldbook.html">Thêm vào kho</a>
+                    <a class="dropdown-item" href="./editinfor.html">Sửa</a>
                 </div>
             </li>
 
@@ -192,19 +188,17 @@
             </div>
         </div>
 
+
         <div id="main">
             <h3>Họ tên : {{name}}</h3>
             <h3>Ngày sinh : {{name}}</h3>
-            <h3>Số diện thoại : {{name}}</h3>
+            <h3>Số điện thoại : {{name}}</h3>
             <h3>Email : {{name}}</h3>
             <h3>Quê quán : {{name}}</h3>
             <!-- <a href="./changePW.html">ChangePW</a> -->
 
             <form action="./changePW.html">
-              <input type="submit" value="ChangePW"/>
-            </form>
-            <form action="./resetPW.html">
-              <input type="submit" value="ResetPW"/>
+              <input type="submit" value="Đổi mật khẩu"/>
             </form>
         </div>    
         

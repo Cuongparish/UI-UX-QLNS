@@ -30,7 +30,7 @@
 
         .logo a{
             position: absolute;
-            font-size: 100px;
+            font-size: 80px;
             color: black;
             text-decoration: none; 
             /* margin-bottom: 20px; */
@@ -135,42 +135,38 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-dark" href="./employee.html">Nhân viên</a>
+            <a class="nav-link active" href="./employee.html">Nhân viên</a>
           </li>
 
-          <li class="nav-item active">
-              <a class="nav-link active" href="./turnover.html">Doanh thu</a>
+          <li class="nav-item">
+              <a class="nav-link text-dark" href="./turnover.html">Doanh thu</a>
           </li>
 
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
-              <div class="dropdown-menu" style="font-size: 20px;">
-                  <a  class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thêm</a>
-                  <div class="dropdown-menu" style="font-size: 20px;">
-                      <a class="dropdown-item" href="#">Nhập thêm sách</a>
-                      <a class="dropdown-item" href="#">Nhập sách mới</a>
-                  </div>
-                  <a class="dropdown-item" href="#">Xóa</a>
-                  <a class="dropdown-item" href="#">Sửa</a>
-              </div>
+            <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
+            <div class="dropdown-menu" style="font-size: 20px;">
+                <a  class="dropdown-item " href="./import_newbook.html" >Thêm mới</a>
+                <a class="dropdown-item" href="./import_oldbook.html">Thêm vào kho</a>
+                <a class="dropdown-item" href="./editinfor.html">Sửa</a>
+            </div>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Tồn kho</a>
+            <a class="nav-link text-dark" href="./inventory.html">Tồn kho</a>
           </li>
 
           <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Công nợ</a>
+              <a class="nav-link text-dark" href="./debt.html">Công nợ</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Chính sách</a>
+              <a class="nav-link text-dark" href="./rule.html">Chính sách</a>
             </li>
         </ul>
 
 
         <a href=""><i class="glyphicon glyphicon-user"></i></a>
-        <a href="">
+        <a href="./profile.html">
           <span class="navbar-text">
             {{tên người dùng}}
             </span>
@@ -178,7 +174,7 @@
     </nav>
 
 
-      <h2>NEW EMPLOYEE</h2>
+      <h2>THÊM NHÂN VIÊN MỚI</h2>
     
       <div class="main">
         <form >
@@ -186,7 +182,7 @@
                 <input type="text" placeholder="Tên">
                 <input type="text" placeholder="Địa chỉ">
                 <input type="text" placeholder="Email">
-                <input type="text" placeholder="Phone">
+                <input type="text" placeholder="Số điện thoại">
                 <input type="text" placeholder="Ngày sinh">
             </div>
             <div class="acc">
