@@ -7,13 +7,14 @@
     <title>Search Book</title>
     <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    
-    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <style>
         html {
         height: 100%;
@@ -22,7 +23,6 @@
         margin:0; 
         padding:0;
         font-family: sans-serif;
-        /* background: linear-gradient(#141e30, #243b55); */
         background-image:url(../Images/bg.jpg);
         background-repeat:no-repeat;
         background-size: cover;
@@ -42,11 +42,6 @@
             padding: 20px;
         }
 
-        /* li{
-            font-size: 20px;
-            padding: 20px;
-        } */
-
         #search {  
             display: flex;
             /* width: 600px; */
@@ -55,16 +50,19 @@
         }
 
         #search>input {  
-
-            width: 600px;
-            height: 40px;
-            font-size: medium;
+        border-radius: 10px;
+        width: 600px;
+        height: 40px;
+        font-size: medium;
+        padding-left: 50px;
         }
 
         #search>button {  
-            width: 100px;
-            height: 40px;
-            font-size: medium;
+        width: 100px;
+        height: 40px;
+        font-size: medium;
+        margin-left: 30px;
+        border-radius: 10px;
         }
 
         #container{
@@ -72,7 +70,7 @@
             display: flex;
             max-width: 1600px;
             margin: 0 0;
-            min-height: 550px;
+            /* min-height: 550px; */
             font-size: 20px;
         }
 
@@ -103,6 +101,7 @@
             width: 560px;
             margin-left: 50px;
             margin-top: 50px;
+            height: 560px;
         }
 
         #container #side h2 {
@@ -113,8 +112,16 @@
             
         }
 
+        #container #side > img {
+            
+            height: 500px;
+            
+        }
+
         .image_book {
             width: 400px;
+            max-height: 500px;
+            margin-left: 100px;
         }
         
         h2{
@@ -125,10 +132,14 @@
         }
         
         #search input{
-            border: none;
-            border-bottom: 2px solid black;
             overflow: hidden;
             background: transparent;
+        }
+
+        #search i{
+            position: absolute;
+            margin-left: 10px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -192,8 +203,9 @@
       <h2>DANH SÁCH TRA CỨU </h2>
 
       <div id="search">
+        <i class="material-icons">search</i>
         <input class="form-control " type="search" placeholder="Nhập thông tin cần tìm" aria-label="Search">
-        <button class="btn btn-outline-success my-0 my-sm-0" type="submit">Tìm</button>
+        <button class="btn btn-outline-dark my-0 my-sm-0" type="submit">Tìm</button>
       </div>
       
       <div id="container" >
@@ -294,8 +306,28 @@
         <div id="side" class="verticalLine">
             <div class="image_book">
                 <h2>Tên sách</h2>           
-                <img src="../Images/bg-login5.jpg"  class="img-thumbnail" > 
-              </div>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="3000">
+                      <img src="https://langngheviet.com.vn/upload/files/1-1-1662221144.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-interval="3000">
+                      <img src="https://images.pexels.com/photos/1146242/pexels-photo-1146242.jpeg?cs=srgb&dl=pexels-olga-1146242.jpg&fm=jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-interval="3000">
+                      <img src="https://images.pexels.com/photos/54300/pexels-photo-54300.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                 <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </button>
+                </div>
+            </div>
         </div>
     </div>
       
