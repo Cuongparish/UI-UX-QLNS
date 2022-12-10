@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <!-- Trigger the modal with a button -->
+  <br>  <br>
+<button type="button" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="#myModal">Show Record</button>  <br>  <br>
+<div class="panel panel-default">
+  <div class="panel-heading"></div>
+  <div class="panel-body">
+
+<form action=""  class="form" id="form-1">
+    <table class="table table-bordered table-light" id="sampleTable">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Tên</th>
+            <th scope="col">Thể loại</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td><input type="text" name="Name"  class="form-control"></td>
+            <td><input type="text" name="Bday"  class="form-control"></td>
+            <td><input type="number" name="Age"  class="form-control"></td>
+          </tr> -->
+
+        </tbody>
+      </table>
+    
+
+</form>
+    <div id="data">
+        <input id="Name1" type="Hidden" name="Name"  class="form-control">
+        <input id="Bday1" type="Hidden" name="Bday"  class="form-control">
+        <input id="Age1" type="Hidden" name="Age"  class="form-control">
+    </div>
+    
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+       <div class="table-responsive">
+          <table class="table" id="example">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Bday</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Name1</td>
+                <td>10-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name2</td>
+                <td>9-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name3</td>
+                <td>8-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name4</td>
+                <td>7-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name5</td>
+                <td>6-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name6</td>
+                <td>10-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name7</td>
+                <td>9-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name8</td>
+                <td>8-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name9</td>
+                <td>7-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name10</td>
+                <td>6-1-1997</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Name11</td>
+                <td>6-1-1997</td>
+                <td>20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+ </div>
+
+</body>
+<script type="text/javascript">
+
+    var table= $('#example').DataTable();
+    var tableBody = '#example tbody';
+
+    $(tableBody).on('click', 'tr', function () {
+        var cursor = table.row($(this));//get the clicked row
+        var data=cursor.data();// this will give you the data in the current row.
+        
+            // var d = x.insertCell(3);
+            // var e = x.insertCell(4);
+            // var f = x.insertCell(5);
+            
+            
+            // var data4=document.getElementById('author').value;
+            // var data5=document.getElementById('quantity').value;
+            // var data6=document.getElementById('price').value;
+            
+            
+            $('#data').find("input[name='Name'][type='Hidden']").val(data[0]);
+            $('#data').find("input[name='Bday'][type='Hidden']").val(data[1]);
+            $('#data').find("input[name='Age'][type='Hidden']").val(data[2]);
+        var x=document.getElementById('sampleTable').insertRow(1);
+            var a = x.insertCell(0);
+            var b = x.insertCell(1);
+            var c = x.insertCell(2);
+            var data1=document.getElementById('Name1').value;
+            var data2=document.getElementById('Bday1').value;
+            var data3=document.getElementById('Age1').value;
+            a.innerHTML=data1;
+            b.innerHTML=data2;
+            c.innerHTML=data3;
+    } );
+
+    function insert_Row()
+          {
+          var x=document.getElementById('sampleTable').insertRow(1);
+          var a = x.insertCell(0);
+          var b = x.insertCell(1);
+          var c = x.insertCell(2);
+          var d = x.insertCell(3);
+          var e = x.insertCell(4);
+          var f = x.insertCell(5);
+          
+          var data1=document.getElementById('id').value;
+          var data2=document.getElementById('name').value;
+          var data3=document.getElementById('topic').value;
+          var data4=document.getElementById('author').value;
+          var data5=document.getElementById('quantity').value;
+          var data6=document.getElementById('price').value;
+          
+          a.innerHTML=data1;
+          b.innerHTML=data2;
+          c.innerHTML=data3;
+          d.innerHTML=data4;
+          e.innerHTML=data5;
+          f.innerHTML=data6;
+          }
+
+</script>
+</html>
+
+
+

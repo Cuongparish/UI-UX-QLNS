@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Book</title>
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+    
+    <style>
+        html {
+        height: 100%;
+        }
+        body {
+        margin:0;
+        padding:0;
+        font-family: sans-serif;
+        /* background: linear-gradient(#141e30, #243b55); */
+        background-image:url(../../Images/bg.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+        position: relative;
+        }
+
+        .logo a{
+            position: absolute;
+            font-size: 100px;
+            color: black;
+            text-decoration: none; 
+            
+        }
+
+        nav{
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        #search {  
+          font-size: 35px;
+            text-align: center;
+            color: black;
+            font-weight: bolder;
+        }
+
+
+        #search>button {  
+            width: 100px;
+            height: 40px;
+            font-size: medium;
+        }
+
+        #container{
+            position: relative;
+            display: flex;
+            max-width: 1600px;
+            margin: 0 0;
+            min-height: 550px;
+            font-size: 20px;
+        }
+
+        
+
+        #container #main{
+            /* position: relative; */
+            /* border-right: 1px solid black; */
+            width: 800px;
+            padding-left: 100px;
+            padding-right: -100px;
+            margin-right: 100px;
+        }
+
+        #container #main h2 {
+            margin-top: 2px;
+            margin-bottom: 5px;
+            text-align: center;
+            color: black;
+        }
+
+        #container #main #infor {
+            overflow-x:hidden;
+            overflow-y:auto;
+            
+            height:380px
+        }
+
+        #container #side {
+            width: 560px;
+            margin-left: 100px;
+            margin-top: 50px;
+            display: flex;  
+            flex-direction: column;
+        }
+
+        #container #side h2 {
+            
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 20px;
+            
+        }
+
+        #container #side input{
+            border: none;
+            border-bottom: 2px solid black;
+            overflow: hidden;
+            background: transparent;
+            
+            font-size: 30px;
+
+            height: 40px;
+            margin-top: 50px;
+            color: black;
+            
+        }
+
+        #container #side button{
+            
+            font-size: 25px;
+            height: 60px;
+            margin-top: 20px;
+            margin-left: 215px;
+            color: white;
+            background-color: black;
+            
+        }
+        .image_book {
+            width: 400px;
+        }
+
+        #search input{
+            border: none;
+            border-bottom: 2px solid black;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        ::placeholder { /* chạy tốt trên Chrome, Firefox, Opera, Safari 10.1+ */
+            color: black !important;
+            opacity: 1; /* Firefox */
+        }
+
+        #container > .add{
+            position: absolute;
+            height: 100px;
+            
+            margin-left: 1280px;
+            margin-top: 450px;
+            
+        }
+
+        #container > .add > button{
+            height: 60px;
+            font-size: 25px;
+            background-color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="../../Images/logo.png" alt="">
+        <a href="">LIBIB</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg ">
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto nav nav-tabs">
+            <li class="nav-item ">
+              <a class="nav-link text-dark " href="./searchbook.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-dark active" href="./receipt.html">Lập hóa đơn</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark " data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý khách hàng</a>
+                <div class="dropdown-menu" style="font-size: 20px;">
+                    <a class="dropdown-item" href="./customer.html">Tra cứu thông tin</a>
+                    <a class="dropdown-item" href="./addCustomer.html">Thêm</a>
+                    <a class="dropdown-item" href="./editCustomer.html">Sửa</a>
+                    <a class="dropdown-item" href="./historyPurcharse.html">Lịch sử mua hàng</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="./historyReceipt.html">Lịch sử bán hàng</a>
+            </li>
+
+          </ul>
+
+
+          <a href="../profile.html"><i class="glyphicon glyphicon-user"></i></a>
+          <a href="../profile.html">
+            <span class="navbar-text">
+              {{tên người dùng}}
+            </span>
+          </a>
+      </nav>
+
+
+      <div id="search">
+        RECEIPT
+      </div>
+      
+      <div id="container" >
+
+        <div id="side" class="verticalLine">
+            <form action="./changePW.html">
+                <h1 style="font-weight: bold; font-size: 30px;">Thông tin đơn hàng</h1>
+                <input type="text" placeholder="Tên KH"> <br>
+                <input type="text" placeholder="SDT"> <br>
+                <input style="width: 371px; text-align: center;" type="date" >  <br>
+                <button class="btn btn-dark btn-lg px-5" type="submit">Tạo phiếu thu tiền</button>
+            </form>
+        </div>
+
+        <div id="main">
+            <h2>SÁCH ĐÃ CHỌN </h2>
+            <hr id="hr2">  
+            <div class="infor" id="infor">
+                <form action=""  class="form" id="form-1">
+                  <table class="table table-bordered table-light" id="sampleTable">
+                      <thead>
+                        <tr>
+                          <th scope="col">Tên sách</th>
+                          <th scope="col">Tác giả</th>
+                          <th scope="col">Thể loại</th>
+              
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- <tr>
+                          <td><input type="text" name="Name"  class="form-control"></td>
+                          <td><input type="text" name="Bday"  class="form-control"></td>
+                          <td><input type="number" name="Age"  class="form-control"></td>
+                        </tr> -->
+              
+                      </tbody>
+                    </table>
+                  
+              
+              </form>
+                
+            </div>
+        </div>  
+
+        <div class="add">
+            <button type="button" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="#myModal">Thêm sách</button>
+            <!-- <button class="btn btn-dark" type="submit">Thêm sách</button> -->
+        </div>  
+        
+    </div>
+
+    <div id="data">
+      <input id="Name1" type="Hidden" name="Name"  class="form-control">
+      <input id="Bday1" type="Hidden" name="Bday"  class="form-control">
+      <input id="Age1" type="Hidden" name="Age"  class="form-control">
+  </div>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Danh sách </h4>
+        </div>
+        <div class="modal-body">
+         <div class="table-responsive">
+            <table class="table" id="example">
+              <thead>
+                <tr>
+                  <th scope="col">Tên sách</th>
+                  <th scope="col">Tác giả</th>
+                  <th scope="col">Thể loại</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Name1</td>
+                  <td>10-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name2</td>
+                  <td>9-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name3</td>
+                  <td>8-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name4</td>
+                  <td>7-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name5</td>
+                  <td>6-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name6</td>
+                  <td>10-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name7</td>
+                  <td>9-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name8</td>
+                  <td>8-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name9</td>
+                  <td>7-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name10</td>
+                  <td>6-1-1997</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Name11</td>
+                  <td>6-1-1997</td>
+                  <td>20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    var table= $('#example').DataTable();
+    var tableBody = '#example tbody';
+
+    $(tableBody).on('click', 'tr', function () {
+        var cursor = table.row($(this));//get the clicked row
+        var data=cursor.data();// this will give you the data in the current row.      
+            
+            $('#data').find("input[name='Name'][type='Hidden']").val(data[0]);
+            $('#data').find("input[name='Bday'][type='Hidden']").val(data[1]);
+            $('#data').find("input[name='Age'][type='Hidden']").val(data[2]);
+        var x=document.getElementById('sampleTable').insertRow(1);
+            var a = x.insertCell(0);
+            var b = x.insertCell(1);
+            var c = x.insertCell(2);
+            var data1=document.getElementById('Name1').value;
+            var data2=document.getElementById('Bday1').value;
+            var data3=document.getElementById('Age1').value;
+            a.innerHTML=data1;
+            b.innerHTML=data2;
+            c.innerHTML=data3;
+    } );
+</script>
+</body>
+</html>
