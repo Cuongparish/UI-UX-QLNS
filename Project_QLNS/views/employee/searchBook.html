@@ -19,8 +19,9 @@
         body {
         margin:0;
         padding:0;
+        font-family: sans-serif;
         /* font-family: sans-serif; */
-        font-family: 'Manrope';
+        /*font-family: 'Manrope';*/
         /* background: linear-gradient(#141e30, #243b55); */
         background-image:url(../../Images/bg.jpg);
         background-repeat:no-repeat;
@@ -30,7 +31,7 @@
 
         .logo a{
             position: absolute;
-            font-size: 100px;
+            font-size: 80px;
             color: black;
             text-decoration: none; 
             
@@ -106,7 +107,13 @@
             overflow: hidden;
             background: transparent;
         }
-
+        
+        h2{
+          /* position: absolute; */
+          font-size: 46px;
+          text-align: center;
+          font-weight: bold;
+        }
         #search i{
             position: absolute;
             margin-left: 10px;
@@ -116,7 +123,7 @@
 </head>
 <body>
     <div class="logo">
-        <img src="../../Images/logo.png" alt="">
+        <img src="../../Images/logo1.png" alt="">
         <a href="">LIBIB</a>
     </div>
 
@@ -125,7 +132,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto nav nav-tabs">
             <li class="nav-item ">
-              <a class="nav-link text-dark active" href="./searchbook.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-dark active" href="./searchbook.html">Trang chủ <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
@@ -149,24 +156,25 @@
           </ul>
 
 
-          <a href="#"><i class="glyphicon glyphicon-user"></i></a>
-          <a href="#">
+          <a href="./profile_employee.html"><i class="glyphicon glyphicon-user"></i></a>
+          <a href="./profile_employee.html">
             <span class="navbar-text">
               {{tên người dùng}}
               </span>
           </a>
       </nav>
 
+      <h2>DANH SÁCH TRA CỨU </h2>
 
       <div id="search">
         <i class="material-icons">search</i>
-        <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Find</button>
+        <input class="form-control " type="search" placeholder="Nhập thông tin cần tìm" aria-label="Search">
+        <button class="btn btn-outline-success my-0 my-sm-0" type="submit">Tìm</button>
       </div>
       
       <div id="container" >
         <div id="main">
-            <h2>DANH SÁCH TRA CỨU </h2>
+
             <hr id="hr2">  
             <div class="infor" id="infor">
                 <form action=""  class="form" id="form-1">
