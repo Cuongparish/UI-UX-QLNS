@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Book</title>
-    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <title>cũ</title>
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     <style>
         html {
         height: 100%;
+        
         }
         body {
         margin:0;
         padding:0;
         font-family: sans-serif;
+        /* background: linear-gradient(#141e30, #243b55); */
         background-image:url(../Images/bg.jpg);
         background-repeat:no-repeat;
         background-size: cover;
@@ -42,47 +40,57 @@
             padding: 20px;
         }
 
+        /* li{
+            font-size: 20px;
+            padding: 20px;
+        } */
+
         #search {  
-            position:absolute;
             display: flex;
+            /* width: 600px; */
             height: 50px;
             margin-left: 400px;
-            margin-bottom: 50px;
-            
         }
 
         #search>input {  
-            border-radius: 10px;
+
             width: 600px;
             height: 40px;
             font-size: medium;
-            padding-left: 50px;
         }
 
-        #search>button { 
-            /* position: absolute;  */
+        #search>button {  
             width: 100px;
             height: 40px;
             font-size: medium;
-            margin-left: 30px;
-            border-radius: 10px;
         }
+
         #container{
-            position: absolute;
+            position: relative;
+            display: flex;
             max-width: 1600px;
             margin: 0 0;
+            min-height: 550px;
             font-size: 20px;
-            margin-top: 50px;
-            margin-left: 300px;
         }
+
 
         #container #main{
-            width: 800px;
-            padding-left: 100px;
+            margin-top: 30px;
+            width: 700px;
+            padding-left: -100px;
             padding-right: -100px;
-
+            margin-left: 200px;
         }
 
+        #container #main h2 {
+            margin-top: 2px;
+            margin-bottom: 5px;
+            text-align: center;
+            color: black;
+            font-size: 30px;
+            font-weight: bolder;
+        }
 
         #container #main #infor {
             overflow-x:hidden;
@@ -91,25 +99,59 @@
             height:350px
         }
 
-        h2{
-          /* position: absolute; */
-          font-size: 46px;
-          text-align: center;
-          font-weight: bold;
+        #container #side {
+            width: 360px;
+            margin-left: 200px;
+            margin-top: 50px;
         }
 
-        #search input{
+        #container #side h2 {
             
-            /* border-bottom: 2px solid black; */
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 20px;
+            
+        }
+
+        .image_book {
+            width: 400px;
+        }
+
+
+        #container #side input{
+            border: none;
+            border-bottom: 2px solid black;
             overflow: hidden;
             background: transparent;
+            display: flex;  
+            flex-direction: column;
+            font-size: 30px;
+            height: 40px;
+            margin-bottom: 20px;
+            color: black;
+            
         }
 
-        #search i{
-            position: absolute;
-            margin-left: 10px;
-            margin-top: 10px;
+        #container #side button{
+            height: 50px;
+            width: 100px;
+            color: black;
+            font-size: 20px;
+            background-color: black;
+            color: beige;
+            margin-left: 250px;
+            
         }
+
+        ::placeholder { /* chạy tốt trên Chrome, Firefox, Opera, Safari 10.1+ */
+            color: black !important;
+            opacity: 1; /* Firefox */
+        }
+
+        table tr:not(:first-child){
+            cursor: pointer;transition: all .25s ease-in-out;
+        }
+        table tr:not(:first-child):hover{background-color: #ddd;}
     </style>
 </head>
 <body>
@@ -118,160 +160,233 @@
         <a href="">LIBIB</a>
     </div>
 
+
     <nav class="navbar navbar-expand-lg ">
       
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto nav nav-tabs">
-          <li class="nav-item ">
-            <a class="nav-link text-dark " href="./searchbook.html">Home <span class="sr-only">(current)</span></a>
-          </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto nav nav-tabs">
+            <li class="nav-item ">
+              <a class="nav-link text-dark" href="./searchbook.html">Home <span class="sr-only">(current)</span></a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="./employee.html">Nhân viên</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Nhân viên</a>
+            </li>
 
-          <li class="nav-item active">
-              <a class="nav-link active" href="./turnover.html">Doanh thu</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="">Doanh thu</a>
+            </li>
 
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
-              <div class="dropdown-menu" style="font-size: 20px;">
-                  <a  class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thêm</a>
-                  <div class="dropdown-menu" style="font-size: 20px;">
-                      <a class="dropdown-item" href="#">Nhập thêm sách</a>
-                      <a class="dropdown-item" href="#">Nhập sách mới</a>
-                  </div>
-                  <a class="dropdown-item" href="#">Xóa</a>
-                  <a class="dropdown-item" href="#">Sửa</a>
-              </div>
-          </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Quản lý sách</a>
+                <div class="dropdown-menu" style="font-size: 20px;">
+                    <a  class="dropdown-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Thêm</a>
+                    <div class="dropdown-menu" style="font-size: 20px;">
+                        <a class="dropdown-item" href="#">Nhập thêm sách</a>
+                        <a class="dropdown-item" href="#">Nhập sách mới</a>
+                    </div>
+                    <a class="dropdown-item" href="#">Xóa</a>
+                    <a class="dropdown-item" href="#">Sửa</a>
+                </div>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Tồn kho</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Tồn kho</a>
+            </li>
 
-          <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Công nợ</a>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Công nợ</a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link text-dark" href="#">Chính sách</a>
             </li>
-        </ul>
+          </ul>
 
 
-        <a href=""><i class="glyphicon glyphicon-user"></i></a>
-        <a href="">
-          <span class="navbar-text">
-            {{tên người dùng}}
-            </span>
-        </a>
+
+          <a href=""><i class="glyphicon glyphicon-user"></i></a>
+          <a href="">
+            <span class="navbar-text">
+                tên người dùng
+              </span>
+          </a>
+      </div>
     </nav>
 
-
-      <h2>RULES</h2>
-    
-      <div id="search">
-        <i class="material-icons">search</i>
-        <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Find</button>
-      </div>
       
       <div id="container" >
+
+        <div id="side" class="verticalLine">
+          <form action="">
+            <input type="Hidden" placeholder="Mã sách" id="id">
+            <input type="text" placeholder="Tên sách" id="name">
+            <input type="text" placeholder="Số lượng" id="topic">
+            <button class="btn" type="button" onclick="editRow();">Sửa</button>
+
+          </form>
+        </div>
+
         <div id="main">
-            
+            <h2>DANH SÁCH SÁCH CÓ TRONG KHO </h2>
             <hr id="hr2">  
             <div class="infor" id="infor">
                 <form action=""  class="form" id="form-1">
-                    <table class="table table-bordered table-light">
+                    <table class="table table-bordered table-light" id="sampleTable">
                         <thead>
                           <tr>
-                            <th scope="col">Tên KH</th>
-                            <th scope="col">Nợ đầu</th>
-                            <th scope="col">Phát sinh</th>
-                            <th scope="col">Nợ cuối</th>
-
+                            <th scope="col">Tên qui định</th>
+                            <th scope="col">Mô tả</th>
+                            <th scope="col">Tình trạng sử dụng</th>
+                            <th scope="col">Xóa</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
+                            <td><a href="">x</a></td>
+                          </tr>
+                          
+                          <tr>
+                            <td>156</td>
+                            <td>Mark</td>
                             <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
 
                           <tr>
-                            <td>1</td>
+                            <td>156</td>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>Otto</td>
+                            <td><a href="">x</a></td>
                           </tr>
-                
+
+                          <tr>
+                            <td>156</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td><a href="">x</a></td>
+                          </tr>
+
+                          <tr>
+                            <td>156</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td><a href="">x</a></td>
+                          </tr>
+
+                          <tr>
+                            <td>156</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td><a href="">x</a></td>
+                          </tr>
+
+                          <tr>
+                            <td>156</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td><a href="">x</a></td>
+                          </tr>
+                          
                         </tbody>
                       </table>
                     
                 </form>
             </div>
         </div>    
-    </div>
-      
+      </div>
+
+        <script>
+            var table = document.getElementById("sampleTable"),rIndex;
+            
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                table.rows[i].onclick = function()
+                {
+                    rIndex = this.rowIndex;
+                    console.log(rIndex);
+                    document.getElementById("id").value = this.cells[0].innerHTML;
+                    document.getElementById("name").value = this.cells[1].innerHTML;
+                    document.getElementById("topic").value = this.cells[2].innerHTML;
+                    document.getElementById("author").value = this.cells[3].innerHTML;
+                    document.getElementById("quantity").value = this.cells[4].innerHTML;
+                    document.getElementById("price").value = this.cells[5].innerHTML;
+                };
+            }
+            
+            
+           // edit the row
+            function editRow()
+            {
+                table.rows[rIndex].cells[0].innerHTML = document.getElementById("id").value
+                table.rows[rIndex].cells[1].innerHTML = document.getElementById("name").value;
+                table.rows[rIndex].cells[2].innerHTML = document.getElementById("topic").value;
+                table.rows[rIndex].cells[3].innerHTML = document.getElementById("author").value
+                table.rows[rIndex].cells[4].innerHTML = document.getElementById("quantity").value;
+                table.rows[rIndex].cells[5].innerHTML = document.getElementById("price").value;
+
+                
+            }
+        </script>
+
 </body>
 </html>
