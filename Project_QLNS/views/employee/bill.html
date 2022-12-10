@@ -98,7 +98,7 @@
         #container #side {
             width: 560px;
             margin-left: 100px;
-            margin-top: 50px;
+            margin-top: 0px;
         }
 
         #container #side h2 {
@@ -114,10 +114,9 @@
             border-bottom: 2px solid black;
             overflow: hidden;
             background: transparent;
-            display: flex;  
-            flex-direction: column;
+            
             font-size: 30px;
-            margin-bottom: 40px;
+            width: 360px;
             height: 40px;
             margin-top: 50px;
             color: black;
@@ -131,6 +130,7 @@
             margin-left: 215px;
             color: white;
             background-color: black;
+            margin-top: 20px;
             
         }
         .image_book {
@@ -210,8 +210,9 @@
             <form action="">
                 <input type="text" placeholder="Tên KH">
                 <input type="text" placeholder="SDT">
-                <input type="text" placeholder="Ngày tháng">
-                <input type="text" placeholder="Tổng tiền">
+                <input tyle=" text-align: center;"  type="date" >
+                <input stype="text" placeholder="Tiền cần thanh toán">
+                <input stype="text" placeholder="Khách đưa">
                 <button class="btn btn-dark btn-lg px-5" type="submit">Tính tiền</button>
             </form>
         </div>
